@@ -85,6 +85,11 @@ usernameInput.addEventListener('input', createListener(isValidUsername))
 
 passwordInput.addEventListener('input', createListener(isValidPassword))
 
-telephoneInput.addEventListener('input', createListener(isValidTelephone))
+telephoneInput.addEventListener('input', (e) => {
+  const formattedPhone = formatTelephone(e.target.value)
+  if (formattedPhone !== e.target.value) {
+    e.target.value = formattedPhone
+  }
+})
 
 emailInput.addEventListener('input', createListener(isValidEmail))
