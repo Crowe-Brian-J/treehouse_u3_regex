@@ -52,7 +52,9 @@ const isValidTelephone = (telephone) => {
 }
 
 // Must be a valid email address
-const isValidEmail = (email) => {}
+const isValidEmail = (email) => {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
 
 /**
  *
