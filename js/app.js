@@ -14,8 +14,10 @@ const isValidUsername = (username) => {
   return /^[a-z]+$/.test(username)
 }
 
-// Must contain a lowercase, uppercase letter and a number
-const isValidPassword = (password) => {}
+// Must contain a lowercase, uppercase letter and a number (used lookahead) - I also required it to have at least 8 characters because password
+const isValidPassword = (password) => {
+  return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(password)
+}
 
 // The telephone number must be in the format of (555) 555-5555
 const isValidTelephone = (telephone) => {}
