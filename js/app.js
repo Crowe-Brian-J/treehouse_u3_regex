@@ -10,16 +10,16 @@ const emailInput = document.getElementById('email')
  */
 
 // Can only contain letters a-z in lowercase
-function isValidUsername(username) {}
+const isValidUsername = (username) => {}
 
 // Must contain a lowercase, uppercase letter and a number
-function isValidPassword(password) {}
+const isValidPassword = (password) => {}
 
 // The telephone number must be in the format of (555) 555-5555
-function isValidTelephone(telephone) {}
+const isValidTelephone = (telephone) => {}
 
 // Must be a valid email address
-function isValidEmail(email) {}
+const isValidEmail = (email) => {}
 
 /**
  *
@@ -27,7 +27,7 @@ function isValidEmail(email) {}
  *
  */
 
-function formatTelephone(text) {}
+const formatTelephone = (text) => {}
 
 /**
  *
@@ -35,7 +35,7 @@ function formatTelephone(text) {}
  *
  */
 
-function showOrHideTip(show, element) {
+const showOrHideTip = (show, element) => {
   // show element when show is true, hide when false
   if (show) {
     element.style.display = 'inherit'
@@ -44,7 +44,7 @@ function showOrHideTip(show, element) {
   }
 }
 
-function createListener(validator) {
+const createListener = (validator) => {
   return (e) => {
     const text = e.target.value
     const valid = validator(text)
