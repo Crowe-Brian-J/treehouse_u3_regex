@@ -5,6 +5,32 @@ const emailInput = document.getElementById('email')
 
 /**
  *
+ * FORMATTING FUNCTIONS
+ *
+ */
+
+const formatTelephone = (text) => {
+  //remove all non-digit characters and anything written after the 10th digit
+  const cleanedText = text.replace(/\D/g, '').substring(0, 10)
+
+  //touch area code, middle digits, and last digits
+  const areaCode = cleanedText.substring(0, 3)
+  const middle = cleanedText.substring(3, 6)
+  const last = cleanedText.substring(6, 10)
+
+  if (cleanedText.length > 6) {
+    return `(${areaCode}) ${middle}-${last}`
+  } else if (cleanedText.length > 3) {
+    return `(${areaCode}) ${middle}`
+  } else if (cleanedText.length > 0) {
+    return `(${areaCode})`
+  } else {
+    return ''
+  }
+}
+
+/**
+ *
  * VALIDATORS
  *
  */
@@ -20,18 +46,13 @@ const isValidPassword = (password) => {
 }
 
 // The telephone number must be in the format of (555) 555-5555
-const isValidTelephone = (telephone) => {}
+const isValidTelephone = (telephone) => {
+  const formatted = formatTelephone(telephone)
+  return /^\(\d{3}\) \d{3}-\d{4}$/.test(formatted)
+}
 
 // Must be a valid email address
 const isValidEmail = (email) => {}
-
-/**
- *
- * FORMATTING FUNCTIONS
- *
- */
-
-const formatTelephone = (text) => {}
 
 /**
  *
