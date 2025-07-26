@@ -10,7 +10,9 @@ const emailInput = document.getElementById('email')
  */
 
 // Can only contain letters a-z in lowercase
-const isValidUsername = (username) => {}
+const isValidUsername = (username) => {
+  return /^[a-z]+$/.test(username)
+}
 
 // Must contain a lowercase, uppercase letter and a number
 const isValidPassword = (password) => {}
